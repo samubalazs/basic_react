@@ -5,9 +5,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const clientConfig = {
 
+  entry: "./src/index.js",
+
   output: {
     path: __dirname + '/dist',
-    filename: 'js/bundle.js'
+    filename: 'bundle.js'
   },
 
   resolve: {
@@ -42,7 +44,7 @@ const clientConfig = {
       filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
+      filename: "style.css"
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')

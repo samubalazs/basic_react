@@ -10,7 +10,6 @@ const WillMatch = () => (
       <h2>This is the match page</h2>
       <Helmet>
           <title>Match Page</title>
-          <meta name="description" content="This is a proof of concept for React SSR" />
       </Helmet>
   </div>
 );
