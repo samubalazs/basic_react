@@ -1,6 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+import userPage from "../components/user";
+
 const Home = () => (
   <p>This is the home screen</p>
 );
@@ -25,7 +27,7 @@ const NoMatch = ({ location }) => (
 const routes = [
   {
     path: "/",
-    component: Home,
+    component: userPage,
     exact: true,
   },
   {

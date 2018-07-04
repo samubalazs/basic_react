@@ -1,46 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { Route, Link, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 
 import './App.scss';
 
 import routes from "./routes/";
-import {
-  userRequest,
-} from './actions/userActions';
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: red;
+`;
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    let user;
-
-    this.state = {
-      user,
-    };
   }
-
-  componentDidMount() {
-      this.setState({
-        user: this.props.userRequest(),
-      });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.user !== this.props.user) {
-      this.setState({
-        user: this.props.user,
-      });
-    }
-  }
-
+  
   render() {
-    console.log(this.state.user);
     return (
       <div className="container">
         <Button>hello</Button>
+        <Title>
+          Hello World, this is my first styled component!
+        </Title>
         <div>
           <ul>
             <li>
@@ -62,18 +46,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-      user: state.user,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        userRequest: () => {
-            dispatch(userRequest());
-        },
-    };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default App;

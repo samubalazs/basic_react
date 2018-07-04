@@ -2,12 +2,12 @@
   "name": "test",
   "version": "1.0.0",
   "description": "xz",
-  "main": "App.js",
+  "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
-    "start:dev": "webpack-dev-server --mode development --config webpack.config.js --hot --history-api-fallback",
+    "start": "webpack-dev-server --mode development --config webpack.config.js --hot",
     "build": "webpack --mode production",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "linter": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,13 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
+    "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^3.3.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -40,11 +42,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
-    "eslint": "^4.19.1",
-    "eslint-config-google": "^0.9.1",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",

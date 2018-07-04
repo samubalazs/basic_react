@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const clientConfig = {
+module.exports = {
 
   entry: "./src/index.js",
 
@@ -28,7 +28,7 @@ const clientConfig = {
       {
         test: /\.scss$/,
         use: [{
-          loader: "style-loader" // creates style nodes from JS strings
+          loader: MiniCssExtractPlugin.loader, // creates style nodes from JS strings
         }, {
           loader: "css-loader" // translates CSS into CommonJS
         }, {
@@ -51,6 +51,4 @@ const clientConfig = {
     }),
     new UglifyJsPlugin()
   ]
-};
-
-module.exports = [clientConfig];
+}
